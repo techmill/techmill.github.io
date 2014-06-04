@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Base Styles and Bootstrap Modifications
    ========================================================================== */
@@ -55,6 +54,10 @@ img {
     vertical-align: middle;
     max-width: 100%;
     height: auto;
+}
+
+body > div.container {
+  margin-top: 50px;
 }
 
 /*
@@ -648,6 +651,41 @@ a:after {
 .bs-callout-info {
   background-color: #f0f7fd;
   border-color: #d0e3f0;
+}
+
+/* Comparison CSS */
+
+.panel-compare {
+  border-color: #25547B;
+  /*background-color: #66A1D2;*/
+  background-color: #f5ffb5;
+  margin-top: 15px;
+}
+
+.panel-compare > .panel-heading {
+  font-size: 20pt;
+  /*background-color: #66A1D2;*/
+  background-color: #f5ffb5;
+  background-image: none;
+  /*color: white;*/
+  color: #96762a;
+  text-align: center;
+  font-weight: bold;
+}
+
+.panel-compare > .table tr.row-highlight td {
+  /*background-color: #0B5FA5;*/
+  background-color: #c8900a;
+  color: white;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.panel-compare > .table td {
+  color: black;
+  background-color: white;
+  text-align: center;
+  font-size: 12pt;
 }
 
 /* ==========================================================================
