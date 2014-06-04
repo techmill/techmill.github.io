@@ -12,12 +12,23 @@ $(function() {
       return;
     }
 
-    var avgMemberCost = (monthlyCosts - (25 * dayPasses)) / memberCount;
-    var regularCost = avgMemberCost * 0.65;
-    var startupCost = avgMemberCost * 2;
+    var regularShares = 0.5;
+    var townieShares = 1.0;
+    var startupShares = 2.0;
+
+    var regularCount = Math.floor(memberCount * 0.625);
+    var townieCount = Math.floor(memberCount * 0.25);
+    var startupCount = memberCount - (regularCount + townieCount);
+
+    var totalShares = (regularCount * regularShares) + (townieCount * townieShares) + (startupCount * startupShares)
+    var shareCost = (monthlyCosts - (25 * dayPasses)) / totalShares;
+
+    //var avgMemberCost = (monthlyCosts - (25 * dayPasses)) / memberCount;
+    var regularCost = shareCost * regularShares;
+    var startupCost = shareCost * startupShares;
 
     $('#regularMembership').text(sprintf('$%0.2f/mo', regularCost));
-    $('#townieMembership').text(sprintf('$%0.2f/mo', avgMemberCost));
+    $('#townieMembership').text(sprintf('$%0.2f/mo', shareCost));
     $('#startupMembership').text(sprintf('$%0.2f/mo', startupCost));
   }
 
