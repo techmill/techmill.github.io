@@ -65,7 +65,8 @@ module.exports = function (grunt) {
                     paths: ['bower_components/bootstrap/less', 'css']
                 },
                 files: {
-                    'css/main.css': 'less/main.less'
+                    'css/main.css': 'less/main.less',
+                    'css/bootconf.css': 'less/bootconf.less'
                 }
             }
         }
