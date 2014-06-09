@@ -23,13 +23,12 @@ $(function() {
     var totalShares = (regularCount * regularShares) + (townieCount * townieShares) + (startupCount * startupShares)
     var shareCost = (monthlyCosts - (25 * dayPasses)) / totalShares;
 
-    //var avgMemberCost = (monthlyCosts - (25 * dayPasses)) / memberCount;
     var regularCost = shareCost * regularShares;
     var startupCost = shareCost * startupShares;
 
-    $('#regularMembership').text(sprintf('$%0.2f/mo', regularCost));
-    $('#townieMembership').text(sprintf('$%0.2f/mo', shareCost));
-    $('#startupMembership').text(sprintf('$%0.2f/mo', startupCost));
+    $('#regularEstimate').text(sprintf('Est. $%0.2f/mo', regularCost));
+    $('#townieEstimate').text(sprintf('Est. $%0.2f/mo', shareCost));
+    $('#startupEstimate').text(sprintf('Est. $%0.2f/mo', startupCost));
   }
 
   $('#monthlyCost,#dayPasses,#memberCount').keyup(updateMemberCosts);

@@ -540,31 +540,31 @@ a:after {
   border-color: #d0e3f0;
 }
 /* Comparison CSS */
-.panel-compare {
-  border-color: #25547B;
-  /*background-color: #66A1D2;*/
-  background-color: #f5ffb5;
+.panel-compare,
+.panel-estimate {
+  border-color: #12a89d;
+  background-color: #12a89d;
   margin-top: 15px;
 }
-.panel-compare > .panel-heading {
+.panel-compare > .panel-heading,
+.panel-estimate > .panel-heading {
+  border-color: #12a89d;
   font-size: 20pt;
-  /*background-color: #66A1D2;*/
-  background-color: #f5ffb5;
+  background-color: #12a89d;
   background-image: none;
-  /*color: white;*/
-  color: #96762a;
+  color: white;
   text-align: center;
   font-weight: bold;
 }
 .panel-compare > .table tr.row-highlight td {
-  /*background-color: #0B5FA5;*/
-  background-color: #c8900a;
-  color: white;
+  background-color: #75e5dc;
   font-size: 12pt;
   font-weight: bold;
 }
-.panel-compare > .table td {
-  color: black;
+td.estimate {
+  text-align: center;
+}
+.panel-compare > .table td.white {
   background-color: white;
   text-align: center;
   font-size: 12pt;
@@ -572,6 +572,11 @@ a:after {
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
+@media (min-width: 992px) {
+  .estimate-form {
+    margin-top: 50px;
+  }
+}
 @media screen and (max-width: 1050px), screen and (max-device-width: 1050px) {
   body .header {
     background-attachment: scroll;
