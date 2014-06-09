@@ -259,6 +259,12 @@ a:after {
 #headerwrap .header-logo {
   width: 350px;
 }
+#headerwrap .highlighted {
+  border: white 10px solid;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+}
 #navbar-header-logo {
   background: url(../img/techmill_small.png);
   background-position: center;
