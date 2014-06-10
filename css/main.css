@@ -103,6 +103,28 @@ body {
   background-color: #16a085;
   color: white;
 }
+.navbar-logo {
+  float: left;
+}
+.navbar-logo > img {
+  height: 60px;
+  margin: 10px;
+  background-color: #222222;
+}
+.navbar-nav {
+  margin-left: 20px;
+}
+.navbar-text {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Raleway";
+  color: white !important;
+}
+@media (min-width: 768px) {
+  .navbar-collapse ul {
+    margin-top: 15px;
+  }
+}
 hr {
   position: relative;
   border: none;
@@ -226,16 +248,19 @@ a:after {
   text-align: center;
   background-attachment: relative;
   background-position: center center;
-  min-height: 650px;
+  min-height: 445px;
   width: 100%;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+#headerwrap iframe {
+  float: right;
 }
 #headerwrap h1 {
   color: #ffffff;
@@ -265,14 +290,32 @@ a:after {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
 }
-#navbar-header-logo {
-  background: url(../img/techmill_small.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80px;
-  width: 80px;
-  height: 50px;
-  margin-right: 20px;
+.fund {
+  float: right;
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+  background-color: #176a61;
+  border: white solid;
+  border-width: 5px 0px 5px 5px;
+  border-radius: 10px 0px 0px 10px;
+  font-family: Raleway;
+  font-size: 24px !important;
+  padding: 20px;
+  text-shadow: none !important;
+}
+.fund img.letters {
+  height: 24px;
+  vertical-align: baseline;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: transparent;
+}
+.fund img.indiegogo {
+  height: 40px;
+  vertical-align: -10px;
+  margin-left: 10px;
+  background: transparent;
 }
 #greywrap {
   background: #f5f5f5;

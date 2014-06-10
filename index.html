@@ -33,35 +33,39 @@
 
   <div id="navbar-main">
     <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <a class="navbar-logo"><img src="img/techmill_logo_1.png"></a>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
-          <div id="navbar-header-logo"></div>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#home" class="smoothScroll">Home</a></li>
             <li> <a href="#about" class="smoothScroll">About</a></li>
             <li> <a href="#initiatives" class="smoothScroll">Initiatives</a></li>
-            <li> <a href="#team" class="smoothScroll">Team</a></li>
             <li> <a href="#events" class="smoothScroll">Events</a></li>
+            <li> <a href="#team" class="smoothScroll">Team</a></li>
             <li> <a href="#contact" class="smoothScroll">Contact</a></li>
-          </div><!--/.nav-collapse -->
+          </ul><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+          </ul>
         </div>
       </div>
     </div>
 
 
-
     <!-- ==== HEADERWRAP ==== -->
     <div id="headerwrap" id="home" name="home">
       <header class="clearfix">
+        <a href="http://igg.me/at/cowork-denton"><p class="fund">Fund <img class="letters" src="img/cowork-denton-letters.png"/> on <img src="img/indiegogo.png" class="indiegogo"/></p></a>
         <p>
             <img src="img/techmill_logo_1.png" alt="TechMill Denton" title="TechMill Denton" class="header-logo" />
-            <a href="http://igg.me/at/cowork-denton"><img class="highlighted" src="img/cowork-indiegogo.png" alt="Support us on Indiegogo"></a>
         </p>
         <p>Denton's Startup Community Builders</p>
       </header>
