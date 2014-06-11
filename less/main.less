@@ -362,25 +362,45 @@ a:after {
     border-radius: 10px 0px 0px 10px;
 
     font-family: Raleway;
-    font-size: 24px !important;
-    padding: 20px;
+    font-size: 20px !important;
+    padding: 10px;
 
     text-shadow: none !important;
 
     img.letters {
-        height: 24px;
-        vertical-align: baseline;
-        margin-left: 10px;
+        height: 20px;
+        vertical-align: -2px;
+        margin-left: 5px;
         margin-right: 10px;
         background: transparent;
     }
 
     img.indiegogo {
-      height: 40px;
+      height: 34px;
       vertical-align: -10px;
       margin-left: 10px;
       background: transparent;
     }
+}
+
+@media (max-width: 767px) {
+  .fund {
+    font-size: 14px !important;
+    padding: 5px;
+    margin-left: 0px !important;
+    border-width: 2px 0px 2px 2px;
+
+    img.letters {
+      height: 14px;
+      margin-left: 0px;
+      margin-right: 2px;
+    }
+
+    img.indiegogo {
+      height: 26px;
+      margin-left: 2px;
+    }
+  }
 }
 
 #greywrap {
@@ -756,6 +776,7 @@ td.estimate {
          margin-top: 50px;
        }
     }
+
 
    @media screen and (max-width:1050px), screen and (max-device-width:1050px){
        body .header{background-attachment: scroll;}

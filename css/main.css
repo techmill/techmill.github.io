@@ -300,22 +300,39 @@ a:after {
   border-width: 5px 0px 5px 5px;
   border-radius: 10px 0px 0px 10px;
   font-family: Raleway;
-  font-size: 24px !important;
-  padding: 20px;
+  font-size: 20px !important;
+  padding: 10px;
   text-shadow: none !important;
 }
 .fund img.letters {
-  height: 24px;
-  vertical-align: baseline;
-  margin-left: 10px;
+  height: 20px;
+  vertical-align: -2px;
+  margin-left: 5px;
   margin-right: 10px;
   background: transparent;
 }
 .fund img.indiegogo {
-  height: 40px;
+  height: 34px;
   vertical-align: -10px;
   margin-left: 10px;
   background: transparent;
+}
+@media (max-width: 767px) {
+  .fund {
+    font-size: 14px !important;
+    padding: 5px;
+    margin-left: 0px !important;
+    border-width: 2px 0px 2px 2px;
+  }
+  .fund img.letters {
+    height: 14px;
+    margin-left: 0px;
+    margin-right: 2px;
+  }
+  .fund img.indiegogo {
+    height: 26px;
+    margin-left: 2px;
+  }
 }
 #greywrap {
   background: #f5f5f5;
