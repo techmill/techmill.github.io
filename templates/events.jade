@@ -1,0 +1,23 @@
+br
+.row
+  br
+  h1.centered WE RUN AWESOME EVENTS
+  hr
+  br
+  br
+
+.container
+  .row
+    .col-md-4
+      +image-popup-button('/image/portfolio/docc.jpg', 'LITTLE DOCC',
+                          '#littledocc', 'Grab a cup')
+      include events/littledocc
+
+    .col-md-4
+      +image-popup-button('/image/portfolio/openhack.jpg', 'OPENHACK DENTON',
+                          '#openhack', 'Open source')
+      include events/openhack
+    .col-md-4
+      +image-popup-button('/image/portfolio/jelly.jpg', 'DENTON JELLY',
+                          '#jelly', 'Jelly up')
+      include events/jelly

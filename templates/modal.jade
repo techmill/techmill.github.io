@@ -1,0 +1,17 @@
+block modal-vars
+  - var title = 'Modal title';
+  - var id = 'modal'
+
+div(class='modal fade', id=id, tabindex=-1, role='dialog', aria-labelledby=id, aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      block modal-content
+        .modal-header
+          block modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+            h4.modal-title= title
+        .modal-body
+          block modal-body
+            | Modal body
+        .modal-footer
+          button(type='button', class='btn btn-default', data-dismiss='modal') Close

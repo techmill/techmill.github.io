@@ -1,84 +1,104 @@
-'use strict';
+module.exports = function(grunt) {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
+    clean: {
+      build: ['build/'],
+      dist: ['dist/'],
+      extraCSS: ['dist/style/elements/', 'dist/style/pages/']
+    },
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
+    copy: {
+      cname: {
+        src: 'CNAME',
+        dest: 'dist/CNAME'
+      },
+    },
 
-module.exports = function (grunt) {
-    // load all grunt tasks
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
-    grunt.initConfig({
-        watch: {
-            options: {
-                nospawn: true
-            },
-            less: {
-                files: ['less/*.less'],
-                tasks: ['less:server']
-            },
-            livereload: {
-                options: {
-                    livereload: LIVERELOAD_PORT
-                },
-                files: [
-                    '*.html',
-                    'css/{,*/}*.css',
-                    'js/{,*/}*.js',
-                    'img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
-            }
+    cssmin: {
+      dist: {
+        options: {
+          // banner: '/* My minified css file */'
+          report: 'gzip'
         },
-        connect: {
-            options: {
-                port: 9000,
-                // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, '.'),
-                            lrSnippet
-                        ];
-                    }
-                }
-            }
+        expand: true,
+        cwd: 'build/style/',
+        src: '**/*.css',
+        dest: 'dist/style/'
+        // ext: '.min.css'
+      }
+    },
+
+    git_deploy: {
+      gh_pages: {
+        options: {
+          url: 'https://github.com/techmill/techmill.github.io',
+          message: "Auto deploy pages, see 'source' branch",
+          branch: 'master' // Careful with this one!!!
         },
-        open: {
-            server: {
-                path: 'http://localhost:<%= connect.options.port %>'
-            }
+        src: 'dist/'
+      },
+    },
+
+    uglify: {
+      options: {
+        // banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        report: 'min',    //'gzip' is nice too but slows task performance by 5-10x
+        preserveComments: false
+      },
+      dist: {
+        expand: true,
+        cwd: 'build/script/',
+        src: '**/*.js',
+        dest: 'dist/script/'
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          removeAttributeQuotes: true,
+          removeRedundantAttributes: true,
+          removeEmptyAttributes: true
         },
-        less: {
-            server: {
-                options: {
-                    paths: ['bower_components/bootstrap/less', 'css']
-                },
-                files: {
-                    'css/main.css': 'less/main.less',
-                    'css/bootconf.css': 'less/bootconf.less'
-                }
-            }
+        expand: true,
+        cwd: 'build/',
+        src: '**/index.html',
+        dest: 'dist/'
+      }
+    },
+
+    wintersmith: {
+      production: {
+        options: {
+          action: 'build',
+          config: './config-production.json'
         }
-    });
+      },
+      preview: {
+        options: {
+          action: 'preview',
+          config: './config.json'
+        }
+      }
+    },
+  });
 
-    grunt.registerTask('server', function (target) {
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-wintersmith');
+  grunt.loadNpmTasks('grunt-git-deploy');
 
-        grunt.task.run([
-            'less:server',
-            'connect:livereload',
-            'open',
-            'watch'
-        ]);
-    });
+  grunt.registerTask('default', ['preview']);
+  grunt.registerTask('preview', ['wintersmith:preview']);
+  grunt.registerTask('build', ['clean:build', 'wintersmith:production']);
+  grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
+  grunt.registerTask('deploy', ['clean', 'build', 'dist', 'git_deploy:gh_pages']);
+
 };

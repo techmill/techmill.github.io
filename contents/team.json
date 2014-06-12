@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Marshall Culpepper, President",
+    "image": "/image/team/marshall.jpg",
+    "twitter": "marshall_law",
+    "facebook": "marshall.culpepper",
+    "github": "marshall",
+    "description": "A versatile hacker with a 15 year open source contribution record. Marshall is a family man with a passion for startups, space, and science."
+  },
+  {
+    "name": "Dave Sims",
+    "image": "/image/team/dave.jpg",
+    "twitter": "davsims",
+    "facebook": "dave.sims.1",
+    "github": "davesims",
+    "description": "Rubyist, Railsist, mobilist. Agilish. Erstwhile musician and music writer."
+  },
+  {
+    "name": "Kyle Taylor",
+    "image": "/image/team/kyle.jpg",
+    "twitter": "kyletaylored",
+    "facebook": "KyleTaylored",
+    "github": "kyletaylored",
+    "description": "Web developer, #Drupal, Coffee-er, #UNT alumn, Startup Evangelist (@StartupDenton &amp; @StartupDigest Dallas). I love tacos and watch Steven Seagal marathons."
+  },
+  {
+    "name": "Clarissa Redwine, Secretary",
+    "image": "/image/team/clarissa.jpg",
+    "twitter": "ClarissaRedwine",
+    "description": "Social Entrepreneurship Enthusiast | Startup Digest Dallas CoCurator | CEO UNT President &amp; CoFounder | TEDxUNT Organizer"
+  },
+  {
+    "name": "Daniel Abasolo",
+    "image": "/image/team/daniel.jpg",
+    "twitter": "DF_Abasolo",
+    "description": "Denton Lawyer - #Aggie - #RedRaider - Legal Marketing Demon - Urban Chicken Rancher"
+  },
+  {
+    "name": "Tyler Browder, Treasurer",
+    "image": "/image/team/tyler.jpg",
+    "facebook": "tbrowder1",
+    "description": "Business! Family! Music! Tech! Board Games! Investor! Bad Speller!"
+  }
+]

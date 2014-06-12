@@ -1,0 +1,9 @@
+extends ../modal
+
+block modal-vars
+  - var title = contents['jelly.md'].title;
+  - var id = 'jelly';
+
+block modal-body
+  p: img.img-responsive(src='/image/portfolio/jelly.jpg')
+  !=contents['jelly.md'].html

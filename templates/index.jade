@@ -1,0 +1,53 @@
+extends layout
+
+block navbar-links
+  - var navbarLinks = ['Home', 'About', 'Initiatives', 'Events', 'Team', 'Contact'];
+
+mixin section(name)
+  .container(id=name, name=name)
+    if block
+      block
+
+mixin image-popup-button(image, name, link, linkText)
+  div(class='grid mask')
+    figure
+      img.img-responsive(src=image)
+      figcaption
+        h5= name
+        a(href=link, class='btn btn-primary btn-lg', data-toggle='modal')= linkText
+
+block content
+  block about
+    - var data = contents['about.md'];
+    +section('about')
+      div(class='row white')
+        br
+        h1.centered= data.title
+        hr
+        .col-lg-6
+          p= data.metadata.p1
+        .col-lg-6
+          p= data.metadata.p2
+
+  block divider1
+    section(class='section-divider textdivider divider1')
+      .container
+        h1 WE MAKE THINGS HAPPEN
+        hr
+        p We accomplish our goals by creating initiatives and organizing events
+
+  block initiatives
+    +section('initiatives')
+      include initiatives
+
+  block events
+    +section('events')
+      include events
+
+  block team
+    +section('team')
+      include team
+
+  block contact
+    +section('contact')
+      include contact

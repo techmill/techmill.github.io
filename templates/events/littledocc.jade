@@ -1,0 +1,9 @@
+extends ../modal
+
+block modal-vars
+  - var title = contents['littledocc.md'].title;
+  - var id = 'littledocc';
+
+block modal-body
+  p: img.img-responsive(src='/image/portfolio/docc.jpg')
+  !=contents['littledocc.md'].html

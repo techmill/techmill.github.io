@@ -1,0 +1,9 @@
+extends ../modal
+
+block modal-vars
+  - var title = contents['openhack.md'].title;
+  - var id = 'openhack';
+
+block modal-body
+  p: img.img-responsive(src='/image/portfolio/openhack.jpg')
+  !=contents['openhack.md'].html

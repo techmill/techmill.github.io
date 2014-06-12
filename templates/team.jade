@@ -1,0 +1,18 @@
+br
+div(class='row white centered')
+  h1.centered MEET OUR TEAM
+  hr
+  br
+  br
+  each member in contents['team.json'].metadata
+    div(class='col-lg-4 centered')
+      img(class='img img-circle', src=member.image, height='120px', width='120px')
+      br
+      h4: b= member.name
+      if member.twitter
+        a(href='http://twitter.com/' + member.twitter, class='icon icon-twitter')
+      if member.facebook
+        a(href='http://www.facebook.com/' + member.facebook, class='icon icon-facebook')
+      if member.github
+        a(href='http://github.com/' + member.github, class='icon icon-github')
+      p= member.description

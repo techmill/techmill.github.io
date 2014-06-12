@@ -1,0 +1,27 @@
+{
+  "ignore": [
+    "bower_components/**/*.less"
+  ],
+
+  "locals": {
+    "url": "http://techmill.co",
+    "name": "TechMill",
+    "owner": "TechMill, Inc.",
+    "description": "Denton's Startup Community Builders"
+  },
+  "plugins": [
+    "wintersmith-less"
+  ],
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  }
+}

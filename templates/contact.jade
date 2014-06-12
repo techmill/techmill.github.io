@@ -1,0 +1,43 @@
+.row
+  br
+  h1.centered THANKS FOR VISITING US
+  hr
+  br
+  br
+  .col-lg-4
+    h3 Contact Information
+    p
+      span(class='icon icon-home')
+      |  Denton, Texas
+      br
+      span(class='icon icon-envelop')
+      a(href='mailto:techmilldenton@gmail.com')  TechMillDenton@gmail.com
+      br
+      span(class='icon icon-twitter')
+      a(href='http://twitter.com/TechMillDenton')  @TechMillDenton
+
+  .col-lg-4
+    h3 Newsletter
+    p Register for our newsletter and get updates about our initiatives, events, and more.
+    p
+      form.form-horizontal(role='form')
+        .form-group
+          label(for='inputEmail1', class='col-lg-4 control-label')
+          .col-lg-10
+            input#inputEmail1.form-control(type='email', placeholder='Email')
+        .form-group
+          label(for='text1', class='col-lg-4 control-label')
+          .col-lg-10
+            input#text1.form-control(type='text', placeholder='Your Name')
+        .form-group
+          .col-lg-10
+            button(type='submit', class='btn btn-success') Sign in
+
+  .col-lg-4
+    h3 Support Us
+    p
+      | You can support us directly by contributing to our 
+      a(href='http://igg.me/at/cowork-denton') Indiegogo campaign
+      | , spreading the word about the Denton startup scene, volunteering to
+      | mentor, or 
+      a(href='http://meetup.com/StartupDentonTech') attending a community event
