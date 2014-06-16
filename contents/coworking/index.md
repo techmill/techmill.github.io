@@ -1,0 +1,3 @@
+---
+template: coworking/index.jade
+---

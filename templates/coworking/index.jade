@@ -1,0 +1,86 @@
+extends ../layout
+
+block navbar-links
+  - var navbarLinks = ['Home'];
+
+block extra-scripts
+  script(src='/bower_components/sprintf/dist/sprintf.min.js')
+  script(src='/script/coworking.js')
+
+mixin compare-table(heading)
+  .col-md-3
+    .panel(class='panel-default panel-compare')
+      .panel-heading= heading
+      table.table
+        block
+
+mixin compare-row(text, colspan)
+  tr
+    if colspan
+      td.white(colspan=colspan)= text
+    else
+      td.white= text
+
+block content
+  .container
+    .row
+      div(class='col-md-4 col-sm-2')
+        iframe(src='https://www.indiegogo.com/project/cowork-denton/embedded', width='222px', height='445px', frameborder='0', scrolling='no')
+      div(class='col-md-8 col-sm-10')
+        form.estimate-form(role='form')
+          #monthlyCost-group.form-group
+            label(for='monthlyCost', class='control-label col-md-3 col-sm-4') Monthly costs
+            div(class='input-group col-md-5 col-sm-6')
+              span.input-group-addon $
+              input#monthlyCost.form-control(type='number', value='4000')
+
+          #dayPasses-group.form-group
+            label(for='dayPasses', class='control-label col-md-3 col-sm-4') Day passes sold
+            div(class='input-group col-md-5 col-sm-6')
+              input#dayPasses.form-control(type='number', value='20')
+
+          #memberCount-group.form-group
+            label(for='dayPasses', class='control-label col-md-3 col-sm-4') Member count
+            div(class='input-group col-md-5 col-sm-6')
+              input#memberCount.form-control(type='number', value='16')
+
+    .row
+      div(class='bs-callout bs-callout-warning')
+        | This calculator is not a quote or a final
+        | representation of actual membership costs, it is only an estimate!
+
+    .row
+      +compare-table('Day Pass')
+        tr.row-highlight: td.centered: $25/day
+        +compare-row('Mon - Fri, 8AM - 5PM')
+        +compare-row('Common seating')
+
+      +compare-table('Denton Regular')
+        tr.row-highlight
+          td.estimate 0.5 shares
+          td#regularEstimate.estimate Est.
+          +compare-row('Mon - Fri, 8AM - 8PM', '2')
+          +compare-row('Common seating', '2')
+          +compare-row('Conference room access', '2')
+          +compare-row('Event hosting', '2')
+
+      +compare-table('Denton Townie')
+        tr.row-highlight
+          td.estimate 1 share
+          td#townieEstimate.estimate Est.
+          +compare-row('24/7 with key', '2')
+          +compare-row('Private desk', '2')
+          +compare-row('Conference room access', '2')
+          +compare-row('Event hosting', '2')
+
+      +compare-table('Denton Startup')
+        tr.row-highlight
+          td.estimate 2 shares
+          td#startupEstimate.estimate Est.
+          +compare-row('24/7 with key', '2')
+          +compare-row('Private office with 1-3 desks', '2')
+          +compare-row('Conference room access', '2')
+          +compare-row('Event hosting', '2')
+          +compare-row('Logo on website', '2')
+          +compare-row('Mailing address', '2')
+
