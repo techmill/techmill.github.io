@@ -1,8 +1,5 @@
 extends ../layout
 
-block navbar-links
-  - var navbarLinks = ['Home'];
-
 block extra-scripts
   script(src='/bower_components/sprintf/dist/sprintf.min.js')
   script(src='/script/coworking.js')
@@ -51,7 +48,7 @@ block content
 
     .row
       +compare-table('Day Pass')
-        tr.row-highlight: td.centered: $25/day
+        tr.row-highlight: td.centered $25/day
         +compare-row('Mon - Fri, 8AM - 5PM')
         +compare-row('Common seating')
 

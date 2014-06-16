@@ -11,7 +11,8 @@
     "description": "Denton's Startup Community Builders"
   },
   "plugins": [
-    "wintersmith-less"
+    "wintersmith-less",
+    "./plugins/paginator.coffee"
   ],
   "require": {
     "moment": "moment",

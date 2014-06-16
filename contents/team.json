@@ -1,10 +1,12 @@
 [
   {
-    "name": "Marshall Culpepper, President",
+    "name": "Marshall Culpepper",
+    "title": "President",
     "image": "/image/team/marshall.jpg",
     "twitter": "marshall_law",
     "facebook": "marshall.culpepper",
     "github": "marshall",
+    "email": "marshall.law@gmail.com",
     "description": "A versatile hacker with a 15 year open source contribution record. Marshall is a family man with a passion for startups, space, and science."
   },
   {
@@ -24,7 +26,8 @@
     "description": "Web developer, #Drupal, Coffee-er, #UNT alumn, Startup Evangelist (@StartupDenton &amp; @StartupDigest Dallas). I love tacos and watch Steven Seagal marathons."
   },
   {
-    "name": "Clarissa Redwine, Secretary",
+    "name": "Clarissa Redwine",
+    "title": "Secretary",
     "image": "/image/team/clarissa.jpg",
     "twitter": "ClarissaRedwine",
     "description": "Social Entrepreneurship Enthusiast | Startup Digest Dallas CoCurator | CEO UNT President &amp; CoFounder | TEDxUNT Organizer"
@@ -36,7 +39,8 @@
     "description": "Denton Lawyer - #Aggie - #RedRaider - Legal Marketing Demon - Urban Chicken Rancher"
   },
   {
-    "name": "Tyler Browder, Treasurer",
+    "name": "Tyler Browder",
+    "title": "Treasurer",
     "image": "/image/team/tyler.jpg",
     "facebook": "tbrowder1",
     "description": "Business! Family! Music! Tech! Board Games! Investor! Bad Speller!"

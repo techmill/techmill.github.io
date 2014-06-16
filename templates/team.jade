@@ -9,6 +9,8 @@ div(class='row white centered')
       img(class='img img-circle', src=member.image, height='120px', width='120px')
       br
       h4: b= member.name
+        if member.title
+          | , #{ member.title }
       if member.twitter
         a(href='http://twitter.com/' + member.twitter, class='icon icon-twitter')
       if member.facebook

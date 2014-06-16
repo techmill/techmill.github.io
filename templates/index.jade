@@ -1,7 +1,13 @@
 extends layout
 
 block navbar-links
-  - var navbarLinks = ['Home', 'About', 'Initiatives', 'Events', 'Team', 'Contact'];
+  - var navbarLinks = [{'Home': '#home'}]
+  - navbarLinks.push({'Blog': '/blog/'});
+  - navbarLinks.push({'About': '#about'});
+  - navbarLinks.push({'Initiatives': '#initiatives'});
+  - navbarLinks.push({'Events': '#events'});
+  - navbarLinks.push({'Team': '#team'});
+  - navbarLinks.push({'Contact': '#contact'});
 
 mixin section(name)
   .container(id=name, name=name)

@@ -1,0 +1,12 @@
+mixin author(authorName)
+  - var team = contents['team.json'].metadata
+  each member in team
+    if member.github == authorName || member.twitter == authorName
+      if member.image
+        img.author-image(class='img img-circle', src=member.image, width='40px')
+
+      span.author
+        if member.email
+          a(href='mailto:'+member.email)= authorName
+        else
+          =authorName

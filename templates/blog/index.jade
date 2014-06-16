@@ -1,0 +1,23 @@
+extends ../layout
+include author
+
+block header
+  .blog-header
+
+block content
+  .content
+  each dir, index in contents.blog._.directories
+    - var article = dir['index.md']
+    if index < 3
+      .row
+        .col-md-8(class='col-md-offset-2')
+          h1.centered= article.title
+          p.author
+            +author(article.metadata.author)
+            |  on 
+            = moment.utc(article.date).format('MMMM DD, YYYY')
+          p.article
+            != typogr(article.intro).typogrify()
+            if article.hasMore
+              p.more
+                a(href=article.url) More..
