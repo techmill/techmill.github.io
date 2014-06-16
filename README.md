@@ -1,16 +1,18 @@
 TechMill website
 ===
 
+The source code lives in the 'source' branch, and 'master' is used for deployment
+with Github pages.
+
 To setup the dev environment:
 
     $ ./setup.sh
 
-To run the dev server on port 9000:
+To run the dev preview server on port 9000:
 
-    $ ./preview.sh
+    $ grunt preview
 
-To build and publish:
+To build and publish (don't forget to push your changes to the source branch!)
 
-    $ ./build.sh
-    $ git add build
-    $ git commit
+    $ grunt deploy
+

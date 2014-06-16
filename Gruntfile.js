@@ -9,6 +9,24 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      bower_components: {
+        expand: true,
+        cwd: 'build/bower_components/',
+        src: '**/dist/**/*',
+        dest: 'dist/bower_components/'
+      },
+      css: {
+        expand: true,
+        cwd: 'build/style/',
+        src: '**',
+        dest: 'dist/style/'
+      },
+      images: {
+        expand: true,
+        cwd: 'build/image/',
+        src: '**',
+        dest: 'dist/image/'
+      },
       cname: {
         src: 'CNAME',
         dest: 'dist/CNAME'
@@ -98,7 +116,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['preview']);
   grunt.registerTask('preview', ['wintersmith:preview']);
   grunt.registerTask('build', ['clean:build', 'wintersmith:production']);
-  grunt.registerTask('dist', ['uglify:dist', 'cssmin:dist', 'htmlmin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
+  grunt.registerTask('dist', ['uglify:dist', 'htmlmin:dist', 'copy', 'clean:build', 'clean:extraCSS']);
   grunt.registerTask('deploy', ['clean', 'build', 'dist', 'git_deploy:gh_pages']);
 
 };
