@@ -6,7 +6,9 @@ block header
 
 block content
   .content
-  each dir, index in contents.blog._.directories
+  - var dirs = contents.blog._.directories;
+  - dirs.reverse();
+  each dir, index in dirs
     - var article = dir['index.md']
     if index < 3
       .row
