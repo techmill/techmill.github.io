@@ -4,7 +4,7 @@ block navbar-links
   - var navbarLinks = [{'Home': '#home'}]
   - navbarLinks.push({'Blog': '/blog/'});
   - navbarLinks.push({'About': '#about'});
-  - navbarLinks.push({'Initiatives': '#initiatives'});
+  - navbarLinks.push({'Coworking': 'http://techmill.cobot.me'});
   - navbarLinks.push({'Events': '#events'});
   - navbarLinks.push({'Team': '#team'});
   - navbarLinks.push({'Contact': '#contact'});
@@ -41,10 +41,6 @@ block content
         h1 WE MAKE THINGS HAPPEN
         hr
         p We accomplish our goals by creating initiatives and organizing events
-
-  block initiatives
-    +section('initiatives')
-      include initiatives
 
   block events
     +section('events')
