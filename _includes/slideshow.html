@@ -1,0 +1,32 @@
+<!--Banner Wrap Start-->
+<div class="banner">
+  <ul class="bxslider">
+
+    {% for slide in site.data.slides %}
+
+    <li class="banner-{{ forloop.index }}">
+      {% if slide.img %}
+        {% include image.html src=slide.img alt=slide.title retina=slide.img_retina %}
+      {% endif %}
+
+      <div class="caption">
+        {% if slide.title %}
+        <h2>{{ slide.title }} {% if slide.subtitle %}<span>{{ slide.subtitle }}</span>{% endif %}</h2>
+        {% endif %}
+        {% if slide.description %}
+        <p>
+          {{ slide.description }}
+        </p>
+        {% endif %}
+        {% if slide.link %}
+        <a class="link_1" href="{{ slide.link }}">See More <i class="fa fa-angle-right"></i></a>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% include breaking-news.html something="this is definitely something" %}
+
+</div>
+<!--Banner Wrap End-->

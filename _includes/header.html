@@ -1,0 +1,111 @@
+<!--Header Wrap Start-->
+<header id="header">
+
+  <!--Top Strip Wrap Start-->
+  <div class="top_strip">
+    <div class="container">
+      <div class="cnt_info">
+        <ul>
+          {% if site.twitter_username %}
+          <li>
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+              <i class="fa fa-twitter"></i> @opendenton
+            </a>
+          </li>
+          {% endif %}
+          <li><i class="fa fa-map-marker"></i> Denton, Texas, US.</li>
+        </ul>
+      </div>
+
+      <div class="scl_icon">
+        <ul>
+          {% if site.facebook_username %}
+          <li>
+            <a href="https://facebook.com/{{ site.facebook_username }}" target="_blank">
+              <span class="fa fa-facebook"></span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.twitter_username %}
+          <li>
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+              <span class="fa fa-twitter"></span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.github_username %}
+          <li>
+            <a href="https://github.com/{{ site.github_username }}" target="_blank">
+              <span class="fa fa-github"></span>
+            </a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="{{ " /feed.xml " | prepend: site.baseurl }}">
+              <span class="fa fa-rss"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Top Strip Wrap End-->
+
+  <!--Navigation Wrap Start-->
+  <div class="navigation_outr_wrap">
+    <div class="container">
+      <!--Logo Wrap Start-->
+      <div class="logo">
+        <a href="/">
+          {% include image.html src="/assets/images/logo.png" alt="Open Denton" retina=1 %}
+        </a>
+      </div>
+      <!--Logo Wrap Start-->
+
+      <!--Navigation Wrap Start-->
+      <div class="ui_element">
+
+        <!--Navigation Wrap Start-->
+        <div class="menu">
+          <ul>
+            {% for nav in site.data.navigation %}
+              <li class=""><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!--Navigation Wrap End-->
+
+        <!--DL Menu Start-->
+        <div id="responsive-navigation" class="dl-menuwrapper">
+          <button class="dl-trigger">Open Menu</button>
+          <ul class="dl-menu">
+            {% for nav in site.data.navigation %}
+              <li class=""><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!--DL Menu END-->
+
+        {% if site.search == "true" %}
+        <!--Search Wrap Start-->
+        <div class="search">
+          <a class="search-fld" href="#"><i class="fa fa-search"></i></a>
+          <div class="search-wrapper-area">
+            <form class="search-area">
+              <input type="text" id="search-input" placeholder="search...">
+              <ul id="results-container"></ul>
+            </form>
+          </div>
+        </div>
+        <!--Search Wrap Start-->
+        {% endif %}
+
+      </div>
+      <!--Navigation Wrap End-->
+
+    </div>
+  </div>
+  <!--Navigation Wrap End-->
+
+</header>
+<!--Header Wrap Start-->
