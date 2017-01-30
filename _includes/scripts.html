@@ -1,59 +1,35 @@
 <!-- Library Scripts -->
-<script src="{{ "/bower_components/jquery/dist/jquery.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/bootstrap/dist/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/bxslider-4/jquery.bxslider.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/downCount/jquery.downCount.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/waypoints/lib/jquery.waypoints.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/Counter-Up/jquery.counterup.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/Accordion/jquery.accordion.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/timecircles/inc/TimeCircles.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/prettyphoto/js/jquery.prettyPhoto.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/moment/min/moment.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/fullcalendar/dist/fullcalendar.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/fullcalendar/dist/gcal.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/masonry/dist/masonry.pkgd.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/retina.js/dist/retina.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/jquery.fitvids/jquery.fitvids.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/bower_components/instafeed.js/instafeed.min.js" | prepend: site.baseurl }}"></script>
+{% for script in site.data.scripts %}
+  {% if script.cdn %}
+    <script type="text/javascript" src="{{ script.cdn }}"></script>
+  {% else %}
+    <script type="text/javascript" src="{{ script.src | prepend: "/" | prepend: site.baseurl }}"></script>
+  {% endif %}
+{% endfor %}
 
-<!-- DL Menu -->
-<script src="{{ "/js/dl-menu/modernizr.custom.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/dl-menu/jquery.dlmenu.js" | prepend: site.baseurl }}"></script>
-
-<!-- Google Maps -->
-<script src="//maps.google.com/maps/api/js"></script>
+<script type="text/javascript">
+if (jQuery.fn.spectragram) {
+    jQuery.fn.spectragram.accessData = {
+      accessToken: '{{ site.instagram_accesstoken }}',
+      clientID: '{{ site.instagram_clientid }}'
+    };
+  }
+</script>
 
 <!-- Custom -->
-<script src="{{ "/js/custom.js" | prepend: site.baseurl }}"></script>
-
-<!-- Google CSE -->
-<!-- <script>
-  (function() {
-    var cx = '003351306828283996181:rh7si9pjoa4';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search> -->
+<script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
 {% if site.google_analytics %}
 <!-- Google Analytics -->
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', '{{ site.google_analytics }}', 'auto');
-ga('require', 'displayfeatures');
-ga('send', 'pageview');
+  ga('create', '{{ site.google_analytics }}', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
 
 </script>
 {% endif %}
@@ -64,36 +40,6 @@ ga('send', 'pageview');
 {% endif %}
 
 {% if site.disqus_shortname %}
-<script type="text/javascript">
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-
-var disqus_config = function () {
-  this.page.url = '{{ site.url }}{{ page.url }}';
-  this.page.identifier = '{{ page.id | remove_first:"/" | replace: "/","_" | replace: "-","_" }}';
-  this.page.title = '{{ page.title | xml_escape }}';
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-
-  s.src = '//{{ site.disqus_shortname }}.disqus.com/embed.js';
-
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
 <script id="dsq-count-scr" src="//{{ site.disqus_shortname }}.disqus.com/count.js" async></script>
 {% endif %}
 

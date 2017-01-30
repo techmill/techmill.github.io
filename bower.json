@@ -1,0 +1,39 @@
+{
+  "name": "techmill.github.io",
+  "homepage": "https://github.com/techmilldenton/techmill.github.io",
+  "authors": [
+    "Kyle Taylor <kyletaylored@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ajaxchimp": "^1.3.0",
+    "bootstrap": "^3.3.7",
+    "animated-headline": "CodyHouse/animated-headline",
+    "Counter-Up": "bfintal/Counter-Up#^1.0.0",
+    "font-awesome": "fontawesome#^4.7.0",
+    "jquery-ui": "^1.12.1",
+    "jquery-spectragram": "adrianengine/jquery-spectragram#^1.0.3",
+    "jquery-waypoints": "imakewebthings/jquery-waypoints#^2.0.5",
+    "jquery.mb.ytplayer": "pupunzi/jquery.mb.YTPlayer#^3.0.10",
+    "meanMenu": "meanthemes/meanMenu",
+    "owl.carousel": "OwlCarousel2/OwlCarousel2#^2.2.0",
+    "scrollup": "markgoodyear/scrollup#^2.4.1",
+    "simple-jekyll-search": "^1.1.5",
+    "slick-carousel": "kenwheeler/slick#^1.6.0",
+    "textillate": "jschr/textillate#^0.4.0",
+    "wow": "matthieua/WOW#^1.1.2",
+    "material-design-iconic-font": "zavoloklom/material-design-iconic-font#^2.2.0",
+    "Nivo-Slider-jQuery": "Codeinwp/Nivo-Slider-jQuery",
+    "fitvids": "^1.2.0"
+  }
+}

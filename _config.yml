@@ -6,18 +6,36 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Open Denton
-email: info@opendenton.com
+title: TechMill Denton
+email: info@techmill.co
 description: > # this means to ignore newlines until "baseurl:"
   Open Denton is a community initiative to increase the usage and availability
   of open data in the city of Denton by engaging the public in civic technology
   and government transparency.
-keywords: "open data, denton, open gov, tech, civic tech"
+keywords: "techmill, denton, tech, startups"
+address: >
+  608 E. Hickory #128
+  Denton, Texas 76205
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.opendenton.com" # the base hostname & protocol for your site
-twitter_username: opendenton
-github_username:  opendenton
-facebook_username: opendenton
+url: "http://dev.techmill.co" # the base hostname & protocol for your site
+
+# Social media
+twitter_username: techmilldenton
+github_username:  techmilldenton
+facebook_username: techmilldenton
+instagram_username: techmilldenton
+soundcloud_username: techmilldenton
+
+# Instagram key
+instagram_clientid: fcf85b5fd86b44fb9569e788f06735cc
+instagram_accesstoken: 2928052102.fcf85b5.1221208ea9814e09bd26ea832ef33427
+
+# Analytics
+google_analytics: "UA-51772036-2"
+add_this: "ra-54305991214faa92"
+
+# Commenting
+disqus_shortname: "techmilldenton"
 
 # Build settings
 markdown: kramdown
@@ -25,13 +43,11 @@ markdown: kramdown
 # Gems
 gems:
 - jekyll-paginate
+- jekyll-minimagick
+- jekyll-sitemap
 
-# Analytics
-google_analytics: "UA-48749943-1"
-add_this: "ra-531d26532ab0a8ba"
-
-# Commenting
-disqus_shortname: "opendenton"
+exclude:
+  - bower_components/owl.carousel/docs_src
 
 # Enable site search
 search: false

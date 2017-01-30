@@ -1,0 +1,104 @@
+<!--Header Area Start-->
+<header>
+	<div class="header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 col-md-6 col-sm-5 hidden-xs">
+					<span>Support your local tech scene</span>
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
+					<div class="header-top-right">
+						{% if site.facebook_username %}
+						<div class="content">
+							<a href="https://facebook.com/{{ site.facebook_username }}" target="_blank">
+								<i class="fa fa-facebook"></i> Facebook
+							</a>
+						</div>
+						{% endif %}
+						{% if site.twitter_username %}
+						<div class="content">
+							<a href="https://twitter.com/{{ site.twitter_username }}">
+								<i class="fa fa-twitter"></i> Twitter
+							</a>
+						</div>
+						{% endif %}
+						{% if site.github_username %}
+						<div class="content">
+							<a href="https://github.com/{{ site.github_username }}" target="_blank">
+								<i class="fa fa-github"></i> Github
+							</a>
+						</div>
+						{% endif %}
+						<div class="content">
+							<a href="{{ "/feed.xml " | prepend: site.baseurl }}">
+								<i class="fa fa-rss"></i> RSS
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="header-logo-menu">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-12">
+					<div class="logo">
+						<a href="index.html"><img src="/assets/img/logo/logo.png" alt="EDUCAT"></a>
+					</div>
+				</div>
+				<div class="col-md-9 hidden-sm hidden-xs">
+					<div class="mainmenu-area pull-right">
+						<div class="mainmenu">
+							<nav>
+								<ul id="nav" class="border-full">
+									{% for nav in site.data.navigation %}
+									<li class=""><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+									{% endfor %}
+								</ul>
+							</nav>
+						</div>
+						<ul class="header-search">
+							<li class="search-menu">
+								<i id="toggle-search" class="fa fa-search"></i>
+							</li>
+						</ul>
+						<!--Search Form-->
+						<div class="search">
+							<div class="search-form">
+								<form id="search-form" action="#">
+									<input type="search" placeholder="Search here..." name="search" />
+									<button type="submit">
+										<span><i class="fa fa-search"></i></span>
+									</button>
+								</form>                                
+							</div>
+						</div>
+						<!--End of Search Form-->
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>  
+	<!-- Mobile Menu Area start -->
+	<div class="mobile-menu-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="mobile-menu">
+						<nav id="dropdown">
+							<ul>
+								{% for nav in site.data.navigation %}
+								<li class=""><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+								{% endfor %}
+							</ul>
+						</nav>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Mobile Menu Area end -->
+</header>
+<!--End of Header Area-->

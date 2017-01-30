@@ -1,0 +1,31 @@
+- bootstrap:
+  src: "bower_components/bootstrap/dist/css/bootstrap.min.css"
+  cdn: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+- font-awesome:
+  src: "bower_components/font-awesome/css/font-awesome.min.css"
+  cdn: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+- owl.carousel:
+  src: "bower_components/owl.carousel/dist/assets/owl.carousel.min.css"
+  cdn: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css"
+- jquery-ui:
+  src: "bower_components/jquery-ui/themes/base/jquery-ui.min.css"
+  cdn: "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css"
+- meanmenu:
+  src: "bower_components/meanMenu/meanmenu.min.css"
+- animate.css:
+  src: "bower_components/animate.css/animate.min.css"
+  cdn: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+- animated-headline.css:
+  src: "bower_components/animated-headline/css/style.css"
+- material-design-iconic-font:
+  src: "bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
+  cdn: "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+- nivoslider:
+  src: "bower_components/Nivo-Slider-jQuery/nivo-slider.css"
+  cdn: "https://cdnjs.cloudflare.com/ajax/libs/jquery-nivoslider/3.2/nivo-slider.min.css"
+- jquery.mb.ytplayer:
+  src: "bower_components/jquery.mb.ytplayer/dist/css/jquery.mb.YTPlayer.min.css"
+  cdn: "https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.0.10/css/jquery.mb.YTPlayer.min.css"
+- slick-carousel:
+  src: "bower_components/slick-carousel/slick/slick.css"
+  cdn: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"

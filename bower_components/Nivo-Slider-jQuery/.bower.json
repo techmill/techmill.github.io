@@ -1,0 +1,14 @@
+{
+  "name": "Nivo-Slider-jQuery",
+  "homepage": "https://github.com/Codeinwp/Nivo-Slider-jQuery",
+  "_release": "32193f27d7",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "32193f27d7a0342a1625cb464e0598243a3bfab5"
+  },
+  "_source": "https://github.com/Codeinwp/Nivo-Slider-jQuery.git",
+  "_target": "*",
+  "_originalSource": "Codeinwp/Nivo-Slider-jQuery",
+  "_direct": true
+}

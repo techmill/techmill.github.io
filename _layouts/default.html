@@ -3,16 +3,21 @@
 {% include head.html %}
 
 <body>
-  <div class="wrapper">
-    {% include header.html %}
+	<!--[if lt IE 8]>
+	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+  <!--Main Wrapper Start-->
+  <div class="as-mainwrapper">
+  	<!--Bg White Start-->
+		<div class="bg-white">
+	    {% include header2.html %}
+	    
+	    {{ content }}
 
-    <div class="content">
-        {{ content }}
-    </div>
+	    {% include footer.html %}
 
-    {% include footer.html %}
-
-  </div>
+		</div> <!--End of Bg White--> 
+	</div> <!--End of Main Wrapper Area--> 
 
   <!-- Scripts -->
   {% include scripts.html %}

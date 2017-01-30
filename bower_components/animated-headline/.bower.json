@@ -1,0 +1,14 @@
+{
+  "name": "animated-headline",
+  "homepage": "https://github.com/CodyHouse/animated-headline",
+  "_release": "d95148f305",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d95148f30557c5ac871f7f55091379b0b811cfad"
+  },
+  "_source": "https://github.com/CodyHouse/animated-headline.git",
+  "_target": "*",
+  "_originalSource": "CodyHouse/animated-headline",
+  "_direct": true
+}
